@@ -1,0 +1,16 @@
+{
+  "name": "epic-games-free-monitor",
+  "version": "1.0.0",
+  "description": "Epic Games Free Games Monitor Extension",
+  "type": "module",
+  "scripts": {
+    "start": "node test.js",
+    "run": "web-ext run"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "web-ext": "^7.8.0"
+  }
+}
