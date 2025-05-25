@@ -4,15 +4,30 @@ document.addEventListener('DOMContentLoaded', () => {
     const status = document.getElementById('status');
     const lastCheck = document.getElementById('lastCheck');
 
+    while (gamesContainer.firstChild) {
+      gamesContainer.removeChild(gamesContainer.firstChild);
+    }
+
     if (data.games?.length > 0) {
       status.textContent = `Now available: ${data.games.length}`;
-      gamesContainer.innerHTML = data.games
-        .map(game => `
-          <div class="game">
-            <a href="${game.url}" target="_blank">${game.title}</a>
-            <div class="time">Until ${new Date(game.endDate).toLocaleDateString()}</div>
-          </div>
-        `).join('');
+      
+      data.games.forEach(game => {
+        const gameDiv = document.createElement('div');
+        gameDiv.className = 'game';
+
+        const link = document.createElement('a');
+        link.textContent = game.title;
+        link.href = game.url;
+        link.target = '_blank';
+
+        const timeDiv = document.createElement('div');
+        timeDiv.className = 'time';
+        timeDiv.textContent = `Until ${new Date(game.endDate).toLocaleDateString()}`;
+
+        gameDiv.appendChild(link);
+        gameDiv.appendChild(timeDiv);
+        gamesContainer.appendChild(gameDiv);
+      });
     } else {
       status.textContent = 'There are no new games';
     }
