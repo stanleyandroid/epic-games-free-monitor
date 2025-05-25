@@ -22,3 +22,4 @@ Thumbs.db
 
 # Firefox
 web-ext-artifacts/
+package-lock.json

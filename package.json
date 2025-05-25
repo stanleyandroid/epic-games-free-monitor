@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "start": "node test.js",
-    "run": "web-ext run"
+    "build": "web-ext build",
+    "run": "web-ext run"    
   },
   "dependencies": {
     "node-fetch": "^3.3.2"

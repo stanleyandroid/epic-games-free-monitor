@@ -31,7 +31,7 @@ A browser extension that automatically tracks and notifies about free game promo
 2. Install dependencies:  
    `npm install`  
 3. Run locally:  
-   `web-ext run`  
+   `npm run build`  
 
 ## Contributing 🤝  
 We welcome contributions! Here’s how to help:  
